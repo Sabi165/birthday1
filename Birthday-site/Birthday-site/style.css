@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: #ffe7ec;
+  text-align: center;
+  color: #333;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+/* Screens */
+#welcome-screen,
+#wishes-screen,
+#cake-screen {
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Show welcome screen first */
+#welcome-screen {
+  display: flex;
+}
+
+/* Celebration image */
+.celebration-img {
+  width: 200px;
+  margin: 20px 0;
+}
+
+/* Wishes screen */
+.wish-message {
+  font-size: 20px;
+  color: #5c3d84;
+  margin: 10px 20px;
+  max-width: 600px;
+}
+
+/* Cake layout */
+#cake-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 30px auto;
+  perspective: 1000px;
+}
+
+.cake-slice {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/cake.png');
+  background-size: cover;
+  background-position: center;
+  transition: transform 1s ease, z-index 0.3s ease;
+}
+
+.slice1 { clip-path: inset(0 75% 0 0); z-index: 4; }
+.slice2 { clip-path: inset(0 50% 0 25%); z-index: 3; }
+.slice3 { clip-path: inset(0 25% 0 50%); z-index: 2; }
+.slice4 { clip-path: inset(0 0 0 75%); z-index: 1; }
+
+.slice1.cut { transform: translateX(-80px) rotateZ(-10deg) scale(1.05); }
+.slice2.cut { transform: translateX(-40px) rotateZ(-5deg); }
+.slice3.cut { transform: translateX(40px) rotateZ(5deg); }
+.slice4.cut { transform: translateX(80px) rotateZ(10deg) scale(1.05); }
+
+#message {
+  font-size: 20px;
+  color: #4caf50;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Buttons */
+button {
+  font-size: 18px;
+  padding: 10px 25px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: #e91e63;
+}
+
+/* Music toggle button */
+#music-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* Confetti canvas */
+#confetti-canvas {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  #cake-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .celebration-img {
+    width: 150px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+}

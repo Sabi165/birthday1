@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 🎈 Welcome Screen -->
+  <section id="welcome-screen">
+    <h1>🎈 Happy Birthday, [Name]! 🎉</h1>
+    <img src="assets/balloons.png" alt="Celebration Balloons" class="celebration-img" />
+    <button onclick="goToWishes()">Start</button>
+  </section>
+
+  <!-- 💌 Wishes Screen -->
+  <section id="wishes-screen" style="display: none;">
+    <h2>💌 Best Wishes 💌</h2>
+    <p class="wish-message">Wishing you a day filled with love, laughter, and cake! 🎂</p>
+    <p class="wish-message">May your birthday be as special as you are! 🎉</p>
+    <p class="wish-message">Cheers to more amazing memories together! 🥂</p>
+    <button onclick="goToCake()">Go to Cake</button>
+  </section>
+
+  <!-- 🎂 Cake Cutting Screen -->
+  <section id="cake-screen" style="display: none;">
+    <h2>Here’s your Cake! 🍰</h2>
+
+    <div id="cake-container">
+      <div class="cake-slice slice1"></div>
+      <div class="cake-slice slice2"></div>
+      <div class="cake-slice slice3"></div>
+      <div class="cake-slice slice4"></div>
+    </div>
+
+    <button onclick="cutCake()">Cut the Cake</button>
+    <p id="message" class="hidden">🎉 Cake is Cut! Happy Celebration! 🐝</p>
+  </section>
+
+  <!-- 🎵 Background Music -->
+  <audio id="birthday-audio" src="assets/birthday.mp3" autoplay loop></audio>
+  <button id="music-toggle">🔇</button>
+
+  <!-- 🎊 Confetti -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- 📜 Script -->
+  <script src="script.js"></script>
+</body>
+</html>
